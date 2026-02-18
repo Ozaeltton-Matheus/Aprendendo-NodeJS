@@ -1,0 +1,8 @@
+var Divisao = function(a, b)
+{
+
+	return a / b
+
+}
+
+module.exports = Divisao
