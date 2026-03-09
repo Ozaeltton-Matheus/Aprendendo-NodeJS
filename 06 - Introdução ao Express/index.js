@@ -37,3 +37,27 @@ app.listen(80, function()
 
 // O erro deCannot GET / acontece porque a aplicação ainda não possui nenhuma rota
 // A rota é um caminho para a sua aplicação
+// O Express é um framework orientado a rotas ou seja toda a sua aplicação será baseada na extrutura de rotas.
+// Como mostrado aqui.
+
+
+// 08 - Parâmetros
+// Os parâmetros são formas de tornar rotas dinâmicas.
+
+// Criando uma rota olá para mostrar o uso dos parâmetros.
+app.get("/ola/:cargo/:nome/:cor/", function(req, res) // Para criar um parâmetro basta colocar /: depois do nome da rota e oque vier depois disso é um parâmetro ao criar um parâmetro é necessário colocar um valor nesse parâmetro na página que estiver rodando no servidor como por exemplo acessar localhost/ola/Matheus que nesse caso Matheus foi o valor que eu dei ao parâmetro, se deixar em branco dá o erro de cannot GET ola nesse caso porque o nome desta rota é ola
+{
+    res.send(`<h1>Olá, ${req.params.nome}!<h1/>\n<h2>Seu cargo é ${req.params.cargo}<h2/>\n<h3>Sua cor favorita é ${req.params.cor}<h3/>`) // Quando colocamos os parâmetros no navegador ele envia esses dados através de uma requisição http para o servidor node. Através do objeto req conseguimos obter dados da requisição que foi feita, inclusive parâmitros. O req.params mostra todos os parâmetros que foram utilizados na requisição
+    //res.send(`<h2>Seu cargo é ${req.params.cargo}<h2/>`)
+    //res.send(`<h3>Sua cor favorita é ${req.params.cor}<h3/>`)
+
+    // Só é possível usar a função send uma vez, se usar mais de uma dará erro
+    // Para contornar isso é necessário colocar o conteúdo que você deseja em uma unica res.send()
+})
+
+// Para exibir um parâmetro especifico basta colocar .nome do parâmetro depois do req.param como no exemplo acima que está req.param.nome
+// E também eu aprendi o porque da variável não estar sendo reconhecida como variável na string é porque para formatação de strings com variáveis por alguma razão o JavaScript utiliza o acento grave (``) e não as aspas simples ('') ou aspas duplas ("")
+
+// O req é responsável por receber dados de uma requisição que foi feita
+
+// Um parâmetro é um valor dinâmico que o usuário consegue passar (introduzir.)
