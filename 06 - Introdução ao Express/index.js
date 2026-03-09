@@ -35,7 +35,9 @@ app.listen(80, function()
 })
 // Para acessar o servidor é aquele padrão de sempre coloca localhost:porta neste caso é localhost:80.
 
-// O erro deCannot GET / acontece porque a aplicação ainda não possui nenhuma rota
+// A rota é a rota de onde as coisas (os recursos) para a sua aplicação estão (O caminho onde esses recursos estão).
+
+// O erro de Cannot GET / acontece porque a aplicação ainda não possui nenhuma rota
 // A rota é um caminho para a sua aplicação
 // O Express é um framework orientado a rotas ou seja toda a sua aplicação será baseada na extrutura de rotas.
 // Como mostrado aqui.
